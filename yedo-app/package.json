@@ -1,0 +1,16 @@
+{
+  "name": "yedo-fullstack-app",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w @yedo/api\" \"npm run dev -w @yedo/client\"",
+    "build": "npm run build -w @yedo/api && npm run build -w @yedo/client",
+    "start": "npm run start -w @yedo/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

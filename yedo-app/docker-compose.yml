@@ -1,0 +1,16 @@
+services:
+  api:
+    build:
+      context: ./apps/api
+    ports:
+      - "8787:8787"
+    environment:
+      PORT: 8787
+
+  web:
+    build:
+      context: ./apps/client
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
